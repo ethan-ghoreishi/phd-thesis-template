@@ -1,0 +1,325 @@
+% ****************************** Custom Margin *********************************
+% Set {innerside margin / outerside margin / topmargin / bottom margin}  and
+% other page dimensions
+\usepackage[left=40mm,right=25mm,top=30mm,bottom=30mm]{geometry}
+
+% ************************* Algorithms and Pseudocode **************************
+
+%\usepackage{algpseudocode}
+
+% ********************Captions and Hyperreferencing / URL **********************
+
+% Captions: This makes captions of figures use a boldfaced small font.
+\usepackage[small,bf]{caption}
+
+\usepackage[pdftex]{graphicx}
+\usepackage{algorithm2e,amsmath,amssymb,amsthm,bm,booktabs,breqn,dblfloatfix,epstopdf,fixltx2e,makecell,mathtools,multirow,paralist,setspace,subfig,tikz,url,xparse}
+\usepackage[export]{adjustbox}
+\usepackage[noend]{algpseudocode}
+\usepackage[en-GB]{datetime2}
+\usepackage[acronym]{glossaries}
+%\usepackage{algorithm2e}
+\usepackage{fancyhdr}
+\usepackage[utf8]{inputenc}
+
+\pagestyle{fancy}
+%\fancyhf{}
+\rhead{}
+\lhead{\textbf{\nouppercase{\rightmark}}}
+\renewcommand{\headrulewidth}{2pt}
+
+\RestyleAlgo{algoruled}
+
+\renewcommand{\arraystretch}{1.35}
+
+\theoremstyle{plain}
+\newtheorem{lem}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{prop}{Proposition}
+
+\newacronym{dc}{DC}{distortion-constrained}
+\newacronym{red}{RED}{random early detection}
+\newacronym{pqr}{PQR}{perceptual quality reduction}
+\newacronym{layers}{SU}{scalable unit}
+\newacronym{psnr}{PSNR}{peak signal-to-noise-ratio}
+\newacronym{vq}{VQ}{virtual queue}
+\newacronym{pq}{PQ}{perceptual quality}
+\newacronym{td}{TD}{tail drop}
+\newacronym{aqm}{AQM}{active queue management}
+\newacronym{svc}{SVC}{scalable video coding}
+\newacronym{qos}{QoS}{quality of service}
+\newacronym{sla}{SLA}{service-level agreement}
+\newacronym{gop}{GoP}{group of pictures}
+\newacronym{su}{SU}{scalable unit}
+\newacronym{msssim}{MS-SSIM}{multi-scale structural similarity}
+\newacronym{fps}{fps}{frames per second}
+\newacronym{lw}{LW-EZEP}{layered-weighted expected zone of error propagation}
+\newacronym{bs}{BS}{base station}
+\newacronym{snr}{SNR}{signal to noise ration}
+\newacronym{qoe}{QoE}{quality of experience}
+\newacronym{ofdma}{OFDMA}{Orthogonal Frequency Division Multiple Access}
+\newacronym{rb}{RB}{resource block}
+\newacronym{cdf}{CDF}{cumulative distribution function}
+\newacronym{tti}{TTI}{transmission time interval}
+\newacronym{ack}{ACK}{}
+\newacronym{abr}{ABR}{Adaptive Bit Rate Streaming}
+\newacronym{ran}{RAN}{Radio Access Network}
+\newacronym{cdn}{CDN}{content delivery network}
+\newacronym{ra}{RA}{resource allocation}
+\newacronym{ssim}{MS-SSIM}{multi-scale structural similarity}
+\newacronym{wgn}{AWGN}{additive white Gaussian noise}
+\newacronym{cnr}{CNR}{channel-to-noise ratio}
+\newacronym{csi}{CSI}{channel state information}
+\newacronym{kkt}{KKT}{Karush-Kuhn-Tucker}
+\newacronym{lte}{LTE}{3GPP long term evolution}
+\newacronym{mos}{MOS}{mean opinion score}
+\newacronym{vaws}{VAWS}{Video-Aware Wireless Channel Scheduler}
+
+\newacronym{sc}{SC}{small cell}
+
+\newacronym{cn}{CN}{core network}
+\newacronym{dash}{DASH}{dynamic adaptive streaming over HTTP}
+\newacronym{ue}{UE}{user equipment}
+\newacronym{mip}{MIP}{mixed integer programming}
+\newacronym{pgw}{P-GW}{packet data network gateway}
+\newacronym{mme}{MME}{mobility management entity}
+\newacronym{sgw}{S-GW}{serving gateway}
+\newacronym{epc}{EPC}{evolved packet core}
+\newacronym{cdt}{CDT}{canonical duality theory}
+\newacronym{iwo}{IWO}{Invasive Weed Optimization}
+
+\newacronym{mno}{MNO}{mobile network operator}
+\newacronym{isp}{ISP}{Internet service providers}
+\newacronym{bip}{BIP}{binary-integer programming}
+\newacronym{has}{HAS}{HTTP-based adaptive streaming}
+\newacronym{lfu}{LFU}{Least Frequently Used}
+\newacronym{lru}{LRU}{Least Recently Used}
+
+\newcommand{\x}[0]{x_{k,l}}
+\newcommand{\Fl}[0]{\bm{\mathcal{F}}_l}
+\newcommand{\Fkl}[0]{\mathcal{F}_{k,l}}
+\newcommand{\Gmm}[0]{\Gamma_{k,l}}
+\newcommand{\gmm}[0]{\gamma_{k,l}}
+\newcommand{\gmmeff}[0]{\gamma_{eff_{k}}}
+\newcommand{\gmmo}[0]{\gamma_{0_{k,l}}}
+\newcommand{\pkl}[0]{P_{k,l}}
+\newcommand{\Pkl}[0]{\mathcal{P}_{k,l}}
+\newcommand{\Pavg}[0]{\overline{P}}
+\newcommand{\R}[0]{R_{k,l}}
+\newcommand{\nuk}[0]{\nu_k}
+\newcommand{\lmdk}[0]{\lambda_k}
+\newcommand{\et}{\eta_{k,l}}
+\newcommand{\q}[0]{q_k}
+\newcommand{\muopt}[0]{\mu_{k,l}(\theta_k,\gamma_{k,l})}
+\newcommand{\mukl}[0]{\mu_{k,l}}
+\newcommand{\dmax}[0]{d_k^{\max}}
+\newcommand{\Dmax}[0]{\Gamma_k}
+\newcommand{\Beff}[0]{\mathcal{B}_E(\theta_k)}
+\newcommand{\Ceff}[0]{\mathcal{C}_E(\theta_k)}
+\newcommand{\Ceffo}[0]{\mathcal{C}_E(\theta_k^{\ast})}
+\newcommand{\Beffo}[0]{\mathcal{B}_E(\theta_k^{\ast})}
+\newcommand{\thetak}[0]{\theta_k}
+\newcommand{\Ak}[0]{A_k^{\min}}
+\newcommand{\la}[0]{\overline{\lambda}}
+\newcommand{\Lk}[0]{L_k}
+\newcommand{\Lset}[0]{\mathcal{L}}
+\newcommand{\Kset}[0]{\mathcal{K}}
+\newcommand{\Rk}[0]{R_k}
+\newcommand{\scf}[0]{\varphi_k}
+\newcommand{\Rkl}[0]{R_{k,l}}
+\newcommand{\Pmax}[0]{P^{\max}}
+\newcommand{\Doverall}[0]{\mathcal{D}^{k}}
+\newcommand{\Dktr}[0]{{D}^k_{tr}}
+\newcommand{\xktr}[0]{x^k_{tr}}
+\newcommand{\ak}[0]{b_1^{(k)}}
+\newcommand{\bk}[0]{b_2^{(k)}}
+\newcommand{\qmax}[0]{q^{(k)}_{\max}}
+\newcommand{\Qk}[0]{Q_k}
+\newcommand{\ck}[0]{b_3^{(k)}}
+\newcommand{\fr}[0]{f^{(k)}}
+\newcommand{\frmax}[0]{f^{(k)}_{\max}}
+\newcommand{\psnr}[0]{\text{PSNR}_k}
+\newcommand{\Rmin}[0]{R_k^{\min}}
+\newcommand{\Amin}[0]{A_k^{\min}}
+\newcommand{\etakl}[0]{\eta_{k,l}}
+\newcommand{\kth}[0]{k^{th}}
+\newcommand{\lth}[0]{l^{th}}
+\newcommand{\hh}[0]{|h_{k,l}|^2}
+\newcommand{\qk}[0]{q_k}
+\newcommand{\Dovral}{\mathcal{D}_{\mathrm{overall}}^{k}}
+
+\newcommand{\Qal}[0]{B^{k}_{t,r}}
+\newcommand{\Qmax}[0]{B_{\max}}
+\newcommand{\qal}[0]{q^{k}_{t,r}}
+
+\newcommand{\Mmax}[0]{C^k}
+
+\newcommand{\abase}[0]{\alpha_{\mathrm{base}}^{k}}
+\newcommand{\aenh}[0]{\alpha_{\mathrm{enh}}^{k}}
+\newcommand{\Q}[0]{B}
+\newcommand{\m}[0]{\overline{\mu}}
+
+\newcommand{\rh}[0]{\rho}
+\newcommand{\T}[0]{\overline{W}}
+\newcommand{\Le}[0]{\overline{L}}
+
+\newcommand{\malb}[0]{\overline{\mu}^{k}_{t,r}}
+\newcommand{\mal}[0]{\overline{\mu}^{k}_{t,r}}
+\newcommand{\laal}[0]{\overline{\lambda}^{k}_{t,r}}
+\newcommand{\Tal}[0]{\overline{W}^{k}_{t,r}}
+\newcommand{\Dsrc}[0]{\mathcal{D}(\rhal)}
+\newcommand{\Dack}[0]{\mathcal{D}(\rhack)}
+\newcommand{\Dal}[0]{\mathcal{D}(\rhal)}
+\newcommand{\n}[0]{n^{k}_{t,r}}
+\newcommand{\rhal}[0]{\rho^{k}_{t,r}}
+\newcommand{\rhoverall}[0]{\mathcal{P}^k_{t,r}}
+\newcommand{\rhack}[0]{{\rho^\prime}^{k}_{t,r}}
+\newcommand{\Leal}[0]{\overline{L^\prime}^{k}_{t,r}}
+\newcommand{\ndepb}[0]{{n}^{k}_{dep_{\textit{t,r}}}}
+\newcommand{\ndep}[0]{{n}^{k}_{dep,t,r}}
+\newcommand{\Tmaxal}[0]{\overline{W}_{{\max}{,{t,r}}}^{k}}
+\newcommand{\Tk}[0]{T^{k}}
+
+\newcommand{\Eq}[0]{\mathbb{E} [q(\rhal)]}
+
+\newcommand{\K}[0]{K}
+\newcommand{\pb}[0]{a^{k}_2}
+\newcommand{\pa}[0]{a^{k}_1}
+\newcommand{\Rset}[0]{\mathcal{R}}
+\newcommand{\Tset}[0]{\mathcal{T}}
+\newcommand{\su}[0]{l_{t,r}}
+\newcommand{\tth}[0]{t^{th}}
+\newcommand{\rth}[0]{r^{th}}
+\newcommand{\fk}[0]{f^{k}}
+\newcommand{\fmax}[0]{f^k_{\max}}
+\newcommand{\pc}[0]{b^{k}_1}
+\newcommand{\pd}[0]{b^{k}_2}
+\newcommand{\pe}[0]{b^{k}_3}
+\newcommand{\Qmin}[0]{Q^k_{\min}}
+\newcommand{\Tmaxalb}[0]{\overline{W}_{\max}^{k}}
+\newcommand{\Talb}[0]{\overline{W}^{k}}
+\newcommand{\sal}[0]{\overline{s}^k_{t,r}}
+
+
+
+\newcommand{\fij}[0]{f_{ij}}
+\newcommand{\qij}[0]{q_{ij}}
+\newcommand{\pij}[0]{p_{ij}}
+\newcommand{\lij}[0]{l_{ij}}
+\newcommand{\lnij}[0]{l_{nij}}
+\newcommand{\sn}[0]{s_n}
+\newcommand{\cn}[0]{c_n}
+\newcommand{\bn}[0]{b_n}
+\newcommand{\xnij}[0]{x_{nij}}
+\newcommand{\mn}[0]{m_n}
+\newcommand{\cmax}[0]{C^\max}
+\newcommand{\Iset}[0]{\mathcal{I}}
+\newcommand{\Jset}[0]{\mathcal{J}}
+\newcommand{\Nset}[0]{\mathcal{N}}
+\newcommand{\an}[0]{\omega_{n}}
+\newcommand{\unl}[0]{\mathcal{U}_{n}(l)}
+\newcommand{\bna}[0]{b_{na}}
+\newcommand{\cna}[0]{c_{na}}
+\newcommand{\fna}[0]{f_{na}}
+\newcommand{\pna}[0]{p_{na}}
+\newcommand{\lna}[0]{l_{na}}
+\newcommand{\sna}[0]{s_{na}}
+\newcommand{\xna}[0]{x_{na}}
+\newcommand{\yka}[0]{Y_{ka}^n}
+\newcommand{\lan}[0]{\lambda_n}
+\newcommand{\mun}[0]{\mu_n}
+\newcommand{\deltaij}[0]{\delta_{ij}}
+\newcommand{\bldfa}[0]{\boldsymbol\delta}
+\newcommand{\bldfb}[0]{\boldsymbol\beta}
+\newcommand{\bldfc}[0]{\boldsymbol\tau}
+\newcommand{\bldfd}[0]{\boldsymbol\sigma}
+\newcommand{\dfa}[0]{\delta_{n}^{\ast}}
+\newcommand{\dfb}[0]{\beta_{k}^{\ast}}
+\newcommand{\dfc}[0]{\tau_{na}^{\ast}}
+\newcommand{\dfd}[0]{\sigma_{n}^{\ast}}
+\newcommand{\ith}[0]{i^{th}}
+\newcommand{\jth}[0]{j^{th}}
+\newcommand{\nth}[0]{n^{th}}
+
+\makeglossaries
+
+% ******************************* Definition *********************************
+\def\university{King's College London}
+\def\name{Seyed Ehsan Ghoreishi}
+
+% ******************************* Line Spacing *********************************
+\doublespacing
+% \onehalfspacing
+% \singlespacing
+
+% ************************ Formatting / Footnote *******************************
+% Don't break enumeration (etc.) across pages in an ugly manner (default 10000)
+%\clubpenalty=500
+%\widowpenalty=500
+
+%\usepackage[perpage]{footmisc} %Range of footnote options
+
+
+% *****************************************************************************
+% *************************** Bibliography  and References ********************
+
+%\usepackage{cleveref} %Referencing without need to explicitly state fig /table
+
+% Add `custombib' in the document class option to use this section
+%\ifuseCustomBib
+% \usepackage[square, sort, numbers, authoryear]{natbib} % CustomBib
+
+% If you would like to use biblatex for your reference management, as opposed to the default `natbibpackage` pass the option `custombib` in the document class. Comment out the previous line to make sure you don't load the natbib package. Uncomment the following lines and specify the location of references.bib file
+
+%\usepackage[backend=biber, style=numeric-comp, citestyle=numeric, sorting=nty, natbib=true]{biblatex}
+%\bibliography{References/references} %Location of references.bib only for biblatex
+
+%\fi
+
+% changes the default name `Bibliography` -> `References'
+\renewcommand{\bibname}{References}
+
+
+% ******************************************************************************
+% ************************* User Defined Commands ******************************
+% ******************************************************************************
+
+% *********** To change the name of Table of Contents / LOF and LOT ************
+
+%\renewcommand{\contentsname}{My Table of Contents}
+%\renewcommand{\listfigurename}{My List of Figures}
+%\renewcommand{\listtablename}{My List of Tables}
+
+
+% ********************** TOC depth and numbering depth *************************
+
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+
+% ******************************* Nomenclature *********************************
+
+% To change the name of the Nomenclature section, uncomment the following line
+
+%\renewcommand{\nomname}{Symbols}
+
+
+% ********************************* Appendix ***********************************
+
+% The default value of both \appendixtocname and \appendixpagename is `Appendices'. These names can all be changed via:
+
+%\renewcommand{\appendixtocname}{List of appendices}
+%\renewcommand{\appendixname}{Appndx}
+
+
+% ******************************** Todo Notes **********************************
+%% Uncomment the following lines to have todonotes.
+
+%\ifsetDraft
+%	\usepackage[colorinlistoftodos]{todonotes}
+%	\newcommand{\mynote}[1]{\todo[author=kks32,size=\small,inline,color=green!40]{#1}}
+%\else
+%	\newcommand{\mynote}[1]{}
+%	\newcommand{\listoftodos}{}
+%\fi
+
+% Example todo: \mynote{Hey! I have a note}
